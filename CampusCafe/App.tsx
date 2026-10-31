@@ -1,6 +1,60 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+type Producto = {
+  nombre: string,
+  categoria: "bebida" | "comida" | "postre",
+  precio: number,
+  disponibilidad: "disponible" | "pocas unidades" | "agotado",
+  observaciones?: string,
+}
+
+const americano: Producto = {
+  nombre: "Café americano",
+  categoria: "bebida",
+  precio: 35,
+  disponibilidad: "disponible"
+}
+
+const licuado: Producto = {
+  nombre: "Licuado de fresa",
+  categoria: "bebida",
+  precio: 55,
+  disponibilidad: "pocas unidades",
+  observaciones: "Producto nuevo"
+}
+
+const empanada: Producto = {
+  nombre: "Empanada de queso",
+  categoria: "comida",
+  precio: 30,
+  disponibilidad: "disponible",
+  observaciones: "10% de descuento"
+}
+
+const sandwich: Producto = {
+  nombre: "Sándwich de pollo",
+  categoria: "comida",
+  precio: 75,
+  disponibilidad: "agotado"
+}
+
+const pastel: Producto = {
+  nombre: "Pastel de chocolate",
+  categoria: "postre",
+  precio: 45,
+  disponibilidad: "pocas unidades",
+  observaciones: "20% de descuento"
+}
+
+const galleta: Producto = {
+  nombre: "Galleta de avena",
+  categoria: "postre",
+  precio: 20,
+  disponibilidad: "disponible",
+  observaciones: "Producto nuevo"
+}
+
 export default function App() {
   return (
     <View style={styles.container}>
