@@ -84,10 +84,10 @@ export default function App() {
         <EncabezadoSeccion title='Menú del día' cantidad={6} mostrarEnlace={true}/>
         <TarjetaProducto producto={americano} onPress={() => handleOnPressMenu('Éxito', americano)} />
         <TarjetaProducto producto={licuado} onPress={() => handleOnPressMenu('Éxito', licuado)} />
-        <TarjetaProducto producto={empanada} onPress={() => handleOnPressMenu('Éxito', empanada)} />
+        <TarjetaProducto producto={empanada} precioDescuento={27} onPress={() => handleOnPressMenu('Éxito', empanada)} />
         <TarjetaProducto producto={sandwich} onPress={() => handleOnPressMenu('Éxito', sandwich)} />
         <TarjetaProducto producto={pastel} onPress={() => handleOnPressMenu('Éxito', pastel)} />
-        <TarjetaProducto producto={galleta} onPress={() => handleOnPressMenu('Éxito', galleta)} />
+        <TarjetaProducto producto={galleta} precioDescuento={36} onPress={() => handleOnPressMenu('Éxito', galleta)} />
 
         <EncabezadoSeccion title='Sus favoritos' cantidad={2} mostrarEnlace={false}/>
         <TarjetaProducto producto={americano} onPress={() => handleOnPressFavoritos('Éxito', americano)} />

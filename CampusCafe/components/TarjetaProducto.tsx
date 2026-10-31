@@ -1,4 +1,4 @@
-import {Alert, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {Producto} from "../App";
 import BotonAccion from "./BotonAccion";
 
@@ -14,7 +14,13 @@ export default function TarjetaProducto({producto, precioDescuento, isNuevo, onP
         <View style={styles.container}>
             <Text>{producto.nombre}</Text>
             <Text>{producto.categoria}</Text>
-            <Text>{(producto.precio).toFixed(2)}</Text>
+            {precioDescuento ? (
+                <Text>
+                    <Text style={styles.strike}>{(producto.precio).toFixed(2)}</Text>
+                    {' '}
+                    <Text>{(precioDescuento).toFixed(2)}</Text>
+                </Text>
+            ) : <Text>{(producto.precio).toFixed(2)}</Text>}
             <BotonAccion title="Agregar" inhabilitado={false} enProceso={false} onPress={onPress} />
         </View>
     )
@@ -23,5 +29,8 @@ export default function TarjetaProducto({producto, precioDescuento, isNuevo, onP
 const styles = StyleSheet.create({
     container: {
         padding: 12,
+    },
+    strike: {
+        textDecorationLine: "line-through",
     }
 })
