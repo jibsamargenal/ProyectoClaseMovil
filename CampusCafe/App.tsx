@@ -60,33 +60,36 @@ const galleta: Producto = {
 
 export default function App() {
   return (
-    <ScrollView>
-      <EncabezadoSeccion title='Menú del día' cantidad={6} mostrarEnlace={false}/>
-      <TarjetaProducto producto={americano} />
-      <TarjetaProducto producto={licuado} />
-      <TarjetaProducto producto={empanada} />
-      <TarjetaProducto producto={sandwich} />
-      <TarjetaProducto producto={pastel} />
-      <TarjetaProducto producto={galleta} />
+    <View style={styles.container}>
+      <ScrollView>
+        <EncabezadoSeccion title='Menú del día' cantidad={6} mostrarEnlace={true}/>
+        <TarjetaProducto producto={americano} />
+        <TarjetaProducto producto={licuado} />
+        <TarjetaProducto producto={empanada} />
+        <TarjetaProducto producto={sandwich} />
+        <TarjetaProducto producto={pastel} />
+        <TarjetaProducto producto={galleta} />
 
-      <EncabezadoSeccion title='Sus favoritos' cantidad={2} mostrarEnlace={false}/>
-      <TarjetaProducto producto={americano} />
-      <TarjetaProducto producto={galleta} />
+        <EncabezadoSeccion title='Sus favoritos' cantidad={2} mostrarEnlace={false}/>
+        <TarjetaProducto producto={americano} />
+        <TarjetaProducto producto={galleta} />
 
-      <EncabezadoSeccion title='Su pedido' mostrarEnlace={false}/>
-      <BotonAccion title="Confirmar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
-      <BotonAccion title="Vaciar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
-      <BotonAccion title="Enviando.." ancho={"todo"} inhabilitado={true} enProceso={true} onPress={() => {}}/>
+        <EncabezadoSeccion title='Su pedido' mostrarEnlace={false}/>
+        <BotonAccion title="Confirmar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
+        <BotonAccion title="Vaciar pedido" apariencia='destructiva' ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
+        <BotonAccion title="Enviando.." ancho={"todo"} inhabilitado={true} enProceso={true} onPress={() => {}}/>
 
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 10,
+    marginTop: 50,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
 });

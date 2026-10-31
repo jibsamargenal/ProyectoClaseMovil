@@ -1,4 +1,4 @@
-import {Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {Producto} from "../App";
 import BotonAccion from "./BotonAccion";
 
@@ -10,7 +10,7 @@ type TarjetaProductoProps = {
 
 export default function TarjetaProducto({producto, precioDescuento, isNuevo}: TarjetaProductoProps) {
     return (
-        <View>
+        <View style={styles.container}>
             <Text>{producto.nombre}</Text>
             <Text>{producto.categoria}</Text>
             <Text>{(producto.precio).toFixed(2)}</Text>
@@ -18,3 +18,9 @@ export default function TarjetaProducto({producto, precioDescuento, isNuevo}: Ta
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 12,
+    }
+})
