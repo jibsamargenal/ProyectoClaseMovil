@@ -76,7 +76,7 @@ export default function App() {
       <EncabezadoSeccion title='Su pedido' mostrarEnlace={false}/>
       <BotonAccion title="Confirmar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
       <BotonAccion title="Vaciar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
-      <BotonAccion title="Enviando.." ancho={"todo"} inhabilitado={false} enProceso={true} onPress={() => {}}/>
+      <BotonAccion title="Enviando.." ancho={"todo"} inhabilitado={true} enProceso={true} onPress={() => {}}/>
 
     </ScrollView>
   );
