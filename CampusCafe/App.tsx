@@ -1,5 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import BotonAccion from './components/BotonAccion';
+import EncabezadoSeccion from './components/EncabezadoSeccion';
+import TarjetaProducto from './components/TarjetaProducto';
 
 export type Producto = {
   nombre: string,
@@ -57,10 +60,25 @@ const galleta: Producto = {
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView>
+      <EncabezadoSeccion title='Menú del día' cantidad={6} mostrarEnlace={false}/>
+      <TarjetaProducto producto={americano} />
+      <TarjetaProducto producto={licuado} />
+      <TarjetaProducto producto={empanada} />
+      <TarjetaProducto producto={sandwich} />
+      <TarjetaProducto producto={pastel} />
+      <TarjetaProducto producto={galleta} />
+
+      <EncabezadoSeccion title='Sus favoritos' cantidad={2} mostrarEnlace={false}/>
+      <TarjetaProducto producto={americano} />
+      <TarjetaProducto producto={galleta} />
+
+      <EncabezadoSeccion title='Su pedido' mostrarEnlace={false}/>
+      <BotonAccion title="Confirmar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
+      <BotonAccion title="Vaciar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
+      <BotonAccion title="Enviando.." ancho={"todo"} inhabilitado={false} enProceso={true} onPress={() => {}}/>
+
+    </ScrollView>
   );
 }
 
