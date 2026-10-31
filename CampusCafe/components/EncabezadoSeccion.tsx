@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native"
+import { Alert, StyleSheet, Text, View } from "react-native"
 import BotonAccion from "./BotonAccion"
 
 type EncabezadoSeccionProps = {
@@ -8,11 +8,17 @@ type EncabezadoSeccionProps = {
 }
 
 export default function EncabezadoSeccion({title, cantidad, mostrarEnlace = false}: EncabezadoSeccionProps) {
+    function handleOnPress() { 
+        Alert.alert(
+            "Mostrando el menú completo"
+        )
+    }
+
     return(
         <View>
             <Text style={styles.text}>{title}</Text>
             {mostrarEnlace && 
-                (<BotonAccion title="Ver todo" apariencia="enlace" enProceso={false} inhabilitado={false} onPress={() => {}}/>)
+                (<BotonAccion title="Ver todo" apariencia="enlace" enProceso={false} inhabilitado={false} onPress={handleOnPress}/>)
             }
         </View>
     )

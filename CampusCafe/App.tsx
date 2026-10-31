@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, ScrollView, StyleSheet, Text, View } from 'react-native';
 import BotonAccion from './components/BotonAccion';
 import EncabezadoSeccion from './components/EncabezadoSeccion';
 import TarjetaProducto from './components/TarjetaProducto';
@@ -59,24 +59,43 @@ const galleta: Producto = {
 }
 
 export default function App() {
+  function handleOnPressMenu(titulo: string, producto: Producto) {
+    Alert.alert(
+      titulo, `${producto.nombre} agregado al pedido`
+    )
+  }
+
+  function handleOnPressFavoritos(titulo: string, producto: Producto){
+    Alert.alert(
+      titulo, `Pedido rápido: ${producto.nombre}`
+    )
+  }
+
+
+  function handleOnPressPedido(titulo: string, mensaje: string) {
+    Alert.alert(
+      titulo, mensaje
+    )
+  }
+
   return (
     <View style={styles.container}>
       <ScrollView>
         <EncabezadoSeccion title='Menú del día' cantidad={6} mostrarEnlace={true}/>
-        <TarjetaProducto producto={americano} />
-        <TarjetaProducto producto={licuado} />
-        <TarjetaProducto producto={empanada} />
-        <TarjetaProducto producto={sandwich} />
-        <TarjetaProducto producto={pastel} />
-        <TarjetaProducto producto={galleta} />
+        <TarjetaProducto producto={americano} onPress={() => handleOnPressMenu('Éxito', americano)} />
+        <TarjetaProducto producto={licuado} onPress={() => handleOnPressMenu('Éxito', licuado)} />
+        <TarjetaProducto producto={empanada} onPress={() => handleOnPressMenu('Éxito', empanada)} />
+        <TarjetaProducto producto={sandwich} onPress={() => handleOnPressMenu('Éxito', sandwich)} />
+        <TarjetaProducto producto={pastel} onPress={() => handleOnPressMenu('Éxito', pastel)} />
+        <TarjetaProducto producto={galleta} onPress={() => handleOnPressMenu('Éxito', galleta)} />
 
         <EncabezadoSeccion title='Sus favoritos' cantidad={2} mostrarEnlace={false}/>
-        <TarjetaProducto producto={americano} />
-        <TarjetaProducto producto={galleta} />
+        <TarjetaProducto producto={americano} onPress={() => handleOnPressFavoritos('Éxito', americano)} />
+        <TarjetaProducto producto={galleta} onPress={() => handleOnPressFavoritos('Éxito', americano)} />
 
         <EncabezadoSeccion title='Su pedido' mostrarEnlace={false}/>
-        <BotonAccion title="Confirmar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
-        <BotonAccion title="Vaciar pedido" apariencia='destructiva' ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => {}}/>
+        <BotonAccion title="Confirmar pedido" ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => handleOnPressPedido("Éxito", "Pedido confirmado")}/>
+        <BotonAccion title="Vaciar pedido" apariencia='destructiva' ancho={"todo"} inhabilitado={false} enProceso={false} onPress={() => handleOnPressPedido("Éxito", "Se vació el pedido")}/>
         <BotonAccion title="Enviando.." ancho={"todo"} inhabilitado={true} enProceso={true} onPress={() => {}}/>
 
       </ScrollView>
