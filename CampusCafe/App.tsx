@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-type Producto = {
+export type Producto = {
   nombre: string,
   categoria: "bebida" | "comida" | "postre",
   precio: number,

@@ -14,3 +14,5 @@ Los props apariencia, tamano, y ancho son opcionales porque tienen valores por d
 
 # P3
 
+# P4
+En la linea 7 de EncabezadoSeccion.tsx, se define el prop mostrarEnlace de tipo booleano, donde si es falso el botón estará inhabilitado. Es opcional, porque se define en la función como falso por defecto, ya que no todas las pantallas lo usarán.
